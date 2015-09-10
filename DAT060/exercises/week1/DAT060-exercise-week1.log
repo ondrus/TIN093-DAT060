@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.1)  8 SEP 2015 22:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.1)  10 SEP 2015 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -139,31 +139,72 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(./DAT060-exercise-week1.aux)
-\openout1 = `DAT060-exercise-week1.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natded/natded.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen122
+\calc@Bdimen=\dimen123
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count104
+\calc@Cskip=\skip53
+)
+\negdepth@jaska=\skip54
+\posdepth@jaska=\skip55
+\lineheight@jaska=\skip56
+\hmargin@jaska=\skip57
+\vmargin@jaska=\skip58
+\vextra@jaska=\skip59
+\cmargin@jaska=\skip60
+\borderwidth@jaska=\skip61
+\nowidth@jaska=\skip62
+\hhrulebase@jaska=\skip63
+\stdepth@jaska=\skip64
+\stwidth@jaska=\skip65
+\arrayrowheight@jaska=\skip66
+\guardspace@jaska=\skip67
+\jguard@jaska=\skip68
+\kmguard@jaska=\skip69
+\templength@jaska=\skip70
+\tempbox@jaska=\box29
+LaTeX Font Info:    Try loading font information for U+msa on input line 85.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 85.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+\c@depth@jaskb=\count105
+\c@jdepth@jaskb=\count106
+\c@linecount@jaskb=\count107
+\templength@jaskb=\skip71
+\extrawin@jaskb=\skip72
+\extrawout@jaskb=\skip73
+\tempbox@jaskb=\box30
+)
+(./DAT060-exercise-week1.aux)
+\openout1 = `DAT060-exercise-week1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -173,14 +214,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
-* v-part:(T,H,B)=(142.26378pt, 595.8007pt, 56.9055pt)
+* v-part:(T,H,B)=(85.35826pt, 652.70622pt, 56.9055pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=443.57848pt
-* \textheight=595.8007pt
+* \textheight=652.70622pt
 * \oddsidemargin=13.08827pt
 * \evensidemargin=13.08827pt
-* \topmargin=47.99379pt
+* \topmargin=-8.91173pt
 * \headheight=8.0pt
 * \headsep=14.0pt
 * \topskip=10.0pt
@@ -202,48 +243,67 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--32
+Underfull \hbox (badness 10000) in paragraph at lines 21--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--32
+Underfull \hbox (badness 10000) in paragraph at lines 21--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--32
+Underfull \hbox (badness 10000) in paragraph at lines 21--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--32
+Underfull \hbox (badness 10000) in paragraph at lines 21--34
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--40
+
+ []
+
+\mlevel0@jaskb=\count108
+\plevel0@jaskb=\count109
+\blockwidth0@jaskb=\dimen124
+\mlevel1@jaskb=\count110
+\plevel1@jaskb=\count111
+\blockwidth1@jaskb=\dimen125
+\blockwidth2@jaskb=\dimen126
+\mlevel2@jaskb=\count112
+\plevel2@jaskb=\count113
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./DAT060-exercise-week1.aux) ) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 119--123
+
+ []
+
+[3] (./DAT060-exercise-week1.aux) ) 
 Here is how much of TeX's memory you used:
- 2115 strings out of 493089
- 25388 string characters out of 6134843
- 87895 words of memory out of 5000000
- 5458 multiletter control sequences out of 15000+600000
+ 2304 strings out of 493089
+ 28131 string characters out of 6134843
+ 103011 words of memory out of 5000000
+ 5639 multiletter control sequences out of 15000+600000
  10936 words of font info for 43 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 34i,4n,28p,344b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb>
-Output written on DAT060-exercise-week1.pdf (1 page, 82448 bytes).
+ 34i,13n,54p,344b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti10.pfb>
+Output written on DAT060-exercise-week1.pdf (3 pages, 93261 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

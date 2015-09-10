@@ -1,7 +1,8 @@
 \documentclass[12pt,oneside,reqno]{amsart}
-\usepackage[left=3cm,right=3cm,top=5cm,bottom=2cm]{geometry} % page settings
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=2cm]{geometry} % page settings
 \usepackage{amsmath} % provides many mathematical environments & tools
 \usepackage{amssymb}
+\usepackage{natded}
 
 \begin{document}
 \setlength{\parindent}{6pt}
@@ -9,9 +10,10 @@
 \def\ra{\rightarrow{}} %Short for right arrow
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\raggedbottom
 
-\title{DAT060 Exercise week 1}
-\author{Josefin Ondrus}
+\title{Josefin Ondrus\\ondrus@student.chalmers.se}
+\author{DAT060 Exercise week 1}
 \date{\today}
 \maketitle
 
@@ -31,21 +33,108 @@
 	Expressed with propositional logic: $(p \land \neg(q\lor r)) \lor ((q \land \neg(p\lor r)) \lor ((r \land \neg(p\lor q))$\\\\
 
 %*************************Q2
-\textbf{Problem 2}
+\textbf{Problem 2}\\\\
 %*************************
-\begin{enumerate}
-\item $p \land (q \land r) \vdash (p \land q) \land r$\\
+\textbf{2.1 }$p \land (q \land r) \vdash (p \land q) \land r$\\
 	proof:
-	\begin{enumerate}
-		\item \itab{$p \land (q \land r)$}	\tab{$premise$}
-		\item \itab{$p$}					\tab{$\land e_1\ 1$}
-		\item \itab{$q \land r$}			\tab{$\land e_2\ 1$}
-		\item \itab{$q$}					\tab{$\land e_1\ 3$}
-		\item \itab{$r$}					\tab{$\land e_2\ 3$}
-		\item \itab{$p \land q$}			\tab{$\land i\ 2,4$}
-		\item \itab{$(p \land q) \land r$}	\tab{$\land i\ 6,5$}
-	\end{enumerate}
-\item $$
-\end{enumerate}
+	\[
+	\Jproof{
+		\proofline{p \land (q \land r)}{premise}
+		\proofline{p}{$\land e_1\ 1$}
+		\proofline{q \land r}{$\land e_2\ 1$}
+		\proofline{q}{$\land e_1\ 3$}
+		\proofline{r}{$\land e_2\ 3$}
+		\proofline{p \land q}{$\land i\ 2,4$}
+		\proofline{(p \land q) \land r}{$\land i\ 5,6$}
+	}
+	\]
+	
+\textbf{2.2 }$(p \ra r) \lor (q \ra r) \vdash (p \land q) \ra r$\\
+	proof:
+	\[
+	\Jproof{
+		\proofline{(p \ra r) \lor (q \ra r)}{premise}
+		\cablk{
+			\proofline{q \land r}{ass}
+			\proofline{p}{$\land e_1\ 2$}
+			\proofline{q}{$\land e_2\ 2$}
+			\cablk{
+				\proofline{p \ra r}{ass}
+				\proofline{r}{$\ra e\ 3,5$}
+			}
+			\cablk{
+				\proofline{q \ra r}{ass}
+				\proofline{r}{$\ra e\ 4,7$}
+			}
+			\proofline{r}{$\lor e\ 5-6, 7-8$}
+		}
+		\proofline{(p \land q) \ra r}{$\ra i\ 2-9$}\\\\
+	}
+	\]
 
+\textbf{2.3 }$p \ra \neg p, \neg p \ra p \vdash \bot$\\
+	proof:
+	\[
+	\Jproof{
+		\proofline{p \ra \neg p}{premise}
+		\proofline{\neg p \ra p}{premise}
+		\cablk{
+			\proofline{p}{ass}
+			\proofline{\neg p}{$\ra e\ 1,3$}
+			\proofline{\bot}{$\neg e\ 3,4$}
+		}
+		\proofline{\neg p}{$\neg i\ 3-5$}
+		\proofline{p}{$\ra e\ 2,6$}
+		\proofline{\bot}{$\neg e\ 6,7$}
+	}
+	\]
+
+\textbf{2.4 }$\neg(p \land q) \vdash \neg p \lor \neg q$\\
+	proof:
+	\[
+	\Jproof{
+		\proofline{\neg(p\land q)}{premise}
+		\cablk{
+			\proofline{\neg(\neg p \lor \neg q)}{ass}
+			\cablk{
+				\proofline{\neg p}{ass}
+				\proofline{\neg p \lor \neg q}{$\lor i_1\ 3$}
+				\proofline{\bot}{$\neg e\ 2,4$}
+			}
+			\proofline{p}{$PBC\ 3-5$}
+			\cablk{
+				\proofline{\neg q}{ass}
+				\proofline{\neg p \lor \neg q}{$\lor i_2\ 7$}
+				\proofline{\bot}{$\neg e\ 2,8$}
+			}
+			\proofline{q}{$PBC\ 7-9$}
+			\proofline{p \land q}{$\land i\ 6,10$}
+			\proofline{\bot}{$\neg e\ 1,11$}
+		}
+		\proofline{\neg p \lor \neg q}{$PBC\ 2-12$}
+	}
+	\]
+
+%*************************Q3
+\textbf{Problem 3}\\\\
+%*************************
+\textbf{3.1 }$(p \ra q) \ra p \vdash p$\\
+	proof:
+	\[
+	\Jproof{
+		\proofline{\neg p}{premise}
+		\cablk{
+			\proofline{\neg p}{ass}
+			\cablk{
+				\proofline{p}{ass}
+				\proofline{\bot}{$\neg e 2,3$}
+				\proofline{q}{$\bot e$}
+			}
+		\proofline{p \ra q}{$\ra i\ 3-5$}
+		\proofline{p}{$\ra e\ 6,1$}
+		\proofline{\bot}{$\ra e\ 7,2$}
+		}
+	\proofline{p}{$PBC\ 2-8$}
+	}
+	\]
 \end{document}
