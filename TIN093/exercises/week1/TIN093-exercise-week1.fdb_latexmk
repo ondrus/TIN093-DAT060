@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1441639448 "TIN093-exercise-week1.tex" "TIN093-exercise-week1.pdf" "TIN093-exercise-week1" 1441695919
+["pdflatex"] 1441921614 "TIN093-exercise-week1.tex" "TIN093-exercise-week1.pdf" "TIN093-exercise-week1" 1441921614
   "/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1284331290 1458 43ab4710dc82f3edeabecd0d099626b2 ""
   "/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty" 1303254447 7140 ece2cc23d9f20e1f53975ac167f42d3e ""
   "/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty" 1335995445 6797 68c89f65e01894df882dd523d3fc0a8f ""
@@ -15,9 +15,9 @@
   "/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty" 1362954379 2637 846ebe982d3549c7ede7ce135456f54a ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty" 1284422013 40502 e003406220954b0716679d7928aedd8a ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty" 1428932888 2594 d18d5e19aa8239cf867fa670c556d2e9 ""
-  "TIN093-exercise-week1.aux" 1441639448 144 c89edc3eb28a976f62dfba342f53289c ""
-  "TIN093-exercise-week1.tex" 1441695918 4876 af224e977cf7f658c65106b78d3f4c00 ""
+  "TIN093-exercise-week1.aux" 1441921614 144 c89edc3eb28a976f62dfba342f53289c ""
+  "TIN093-exercise-week1.tex" 1441921613 6616 20d61429d9d5a045d7a68481716a280e ""
   (generated)
   "TIN093-exercise-week1.pdf"
-  "TIN093-exercise-week1.aux"
   "TIN093-exercise-week1.log"
+  "TIN093-exercise-week1.aux"

@@ -12,7 +12,7 @@
 \date{\today}
 \maketitle
 
-%***********OK?**************Q1
+%***********OK**************Q1
 \textbf{What does $n^{O(1)}$ mean?}\\\\
 %*************************
 Since the exponent is constant we can write $n^{O(1)}=n^c$ which is polynomial time in $n$.\\\\
@@ -35,26 +35,28 @@ $O(f(n)+g(n))=O(max\{f(n), g(n)\})$\\\\
 and for this algorithm: $g(n) \leq f(n)$ since $0 \leq n, n\in n^2$ \\\\
 which gives us the time complexity $O(f(n))=O(n^2)$. Since the time for executing constants depends on the computer hardware we choose to disregard this.\\\\
 
-%*************************Q5
-\textbf{What is the worst-case time complexity of adding 1 to (or subtracting 1 from) an integer with $n$ digits, if we count operations with digits as elementary operations?}\\
+%***********OK**************Q5
+\textbf{What is the worst-case time complexity of adding 1 to (or subtracting 1 from) an integer with $n$ digits, if we count operations with digits as elementary operations?}\\\\
 %********************
-$n$ ex: 999999999 or 10000000000
+Worst case time complexity is $O(n)$ and this will occur if we have to do operations on all digits of the integer. This will occur every time all digits on position $n-1$ has the value $9$ (or all digits in position $n-1$ has the value $0$). Example on cases like this is $499$ or $100$.\\\\
 
-%*************************Q6
-\textbf{What is the worst-case time complexity of comparing two integers $x, y$ with $n$ digits, if we count operations with digits as elementary operations? Comparing means to decide whether $x < y, x = y, or x < y$.}\\
+%*************OK************Q6
+\textbf{What is the worst-case time complexity of comparing two integers $x, y$ with $n$ digits, if we count operations with digits as elementary operations? Comparing means to decide whether $x < y, x = y, or x < y$.}\\\\
 %********************
-$n$ ex: x=5555551 y=5555552
+Worst case time complexity is $O(n)$ and this will occur if we have to do comparisons between all digits of the integers. Since we should start by comparing the digit on position $n$, this will occur every time the numbers differs only on the last digit or in the case of $x=y$. Example: $x=551, y=552$ Where both $x$ and $y$ have the value $5$ on positions $n$ and $n-1$ but differs at the last digit where we we see that $x<y$.\\\\
 
-%*************************Q7
-\textbf{How many digit operations do you need to compute the sum $1+2+3+\dots+n?$ Try to come up with a bound in O-notation which is as good as possible.}\\
+%*********OK****************Q7
+\textbf{How many digit operations do you need to compute the sum $1+2+3+\dots+n?$ Try to come up with a bound in O-notation which is as good as possible.}\\\\
 %********************
+We know that $1+2+3+ \dots +n = \sum\limits_{i=1}^n i = \frac{n(n+1)}{2}$. And $\frac{n(n+1)}{2}$ we can calculate in constant time as we have $3$ high-level operations. i.e. $O(1)$.\\\\
 
-
-%*************************Q8
-\textbf{Give a rigorous proof that $m$ integers of $n$ digits can be added in $O(mn)$ time. (Intuitively this should be true, but the details are not so obvious.)}\\
+%***********OK**************Q8
+\textbf{Give a rigorous proof that $m$ integers of $n$ digits can be added in $O(mn)$ time. (Intuitively this should be true, but the details are not so obvious.)}\\\\
 %********************
+Adding two integers of length $n$ requires $O(n)$ time since the sum depends on every digit and we need to read all the digits. However, if we would add $m$ integers of $n$ digits it would take no more than $O(mn)$ in time complexity, if done efficiently. Lets say that the number of digits in the sum of the added integers is $k$. We only need to care about the situation where $k \geq n$ as we want the prove the upper bound. Since no $m_i$ has a digit length, $n$, greater than $k$ we know that for every new $m$ we add to our sum we only need to do at most $n$ operations. And therefor we have a time complexity of $O(mn)$.\\\\
 
-%*************************Q9
+
+%*************NEJ************Q9
 \textbf{Let $p$ and $q$ be integers with $n$ and $m$ digits, respectively. In the following
 suppose that both multiplication (calculating $pq$) and division with remainder
 requires $O(nm)$ time. Division with remainder means to calculate the
@@ -64,7 +66,10 @@ remainder zero) only by 1 and $p$. We want to decide whether a given number
 $p$ with $n$ digits is prime. A naive algorithm just closely follows the definition:
 It divides $p$ by all integers from $2$ to $p−1$ and checks that the remainders
 are nonzero. Derive a time bound in O-notation, both as a function of $n$
-and as a function of $p$.}\\
+and as a function of $p$.}\\\\
 %********************
+I did not have the time to write down my answer but I would like to turn in my thought later on. :)\\\\
+As a function of p: worst case is when the number is a prime... \\
+As a function of n: worst case is when the number is a prime... 
 
 \end{document}
