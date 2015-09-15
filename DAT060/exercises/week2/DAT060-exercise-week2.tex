@@ -119,5 +119,43 @@ We can show this by prove the invalidity in a truth table. If the most right col
 $\varphi$ and $\psi$ have the same truth value under each valuation.\\\\
 
 \textbf{b)}\\
+%To show $\varphi \equiv \varphi'$, we need to show that
+Lets make truth tables for every operator and prove that a combination of $\odot$ derives to each operator with the same atoms.\\\\
+
+NOT:\\
+	\begin{tabular}{ c|c|c|c }
+		$p$ & $\neg p$ & $p \odot p$ & $p\odot p \vdash \neg p$ \\ \hline
+		T & 	F & F & T \\
+		T & 	F & F & T \\
+		F & 	T & T & T \\
+		F &		T & T & T \\
+	\end{tabular}\\\\
+
+AND:\\
+	\begin{tabular}{ cc|c|c|c|c }
+		$p$ & $q$ & $p \land q$ & $ p \odot q$ & $(p \odot q) \odot (p \odot q)$ & $(p \odot q) \odot (p \odot q) \vdash p\land q$ \\ \hline
+		T & T & 	T & F & T & T \\
+		T & F & 	F & T & F & T \\
+		F & T & 	F & T & F & T \\
+		F & F & 	F & T & F & T \\
+	\end{tabular}\\\\
+	
+OR:\\
+	\begin{tabular}{ cc|c|c|c|c|c }
+		$p$ & $q$ & $p \lor q$ & $p \odot p$ & $q \odot q$ & $(p \odot p) \odot (q \odot q)$ & $(p \odot p) \odot (q \odot q) \vdash p\lor q$ \\ \hline
+		T & T & 	T & F & F & T & T \\
+		T & F & 	T & F & T & T & T \\
+		F & T & 	T & T & F & T & T \\
+		F & F & 	F & T & T & F & T \\
+	\end{tabular}\\\\
+
+IMPL:\\
+	\begin{tabular}{ cc|c|c|c|c }
+		$p$ & $q$ & $p \ra q$ & $ p \odot q$ & $p \odot (p \odot q)$ & $p \odot (p \odot q) \vdash p \ra q$ \\ \hline
+		T & T & 	T & F & T & T \\
+		T & F & 	F & T & F & T \\
+		F & T & 	T & T & T & T \\
+		F & F & 	T & T & T & T \\
+	\end{tabular}\\\\
 
 \end{document}
