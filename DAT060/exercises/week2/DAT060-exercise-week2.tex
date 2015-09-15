@@ -1,0 +1,123 @@
+\documentclass[12pt,oneside,reqno]{amsart}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=2cm]{geometry} % page settings
+\usepackage{amsmath} % provides many mathematical environments & tools
+\usepackage{amssymb}
+\usepackage{natded}
+\usepackage{booktabs}
+
+\begin{document}
+\setlength{\parindent}{6pt}
+\def\code#1{\texttt{#1}} %Code looking
+\def\ra{\rightarrow{}} %Short for right arrow
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\raggedbottom
+
+\title{Josefin Ondrus\\ondrus@student.chalmers.se}
+\author{DAT060 Exercise week 1}
+\date{\today}
+\maketitle
+
+%**********OK? CHECK a) ***************Q1
+\textbf{Problem 1}\\\\
+%*************************
+\textbf{a)}\\
+truth table:\\
+	\begin{tabular}{ cc|c|c|c }
+		p & q & $p \ra \neg q$ & $\neg(p \ra \neg q)$ & $p \land \neg(p \ra \neg q)$ \\ \hline
+		T & T & F & T & T \\
+		T & F & T & F & F \\
+		F & T & T & F & F \\
+		F & F & T & F & F \\
+	\end{tabular}\\\\
+CNF:\\
+$\neg((p \land \neg q) \lor (\neg p \land q) \lor (\neg p \land \neg q))$
+$\Leftrightarrow$\\
+$\neg(p \land \neg q) \land \neg(\neg p \land q) \land \neg(\neg p \land \neg q)$
+$\Leftrightarrow$\\
+$(\neg p \lor q) \land (p \lor \neg q) \land (p \lor q)$
+$\Leftrightarrow$\\
+$p \land q$ \\\\
+
+\textbf{b)}\\
+truth table:\\
+	\begin{tabular}{ ccc|c|c|c }
+		p & q & r & $q \ra r \land \neg p$ & $p \lor (q \ra r \land \neg p)$ & $\neg r \ra p \lor (q \ra r \land \neg p)$ \\ \hline
+		T & T & T &	 F & T & T \\
+		T & T & F &	 F & T & T \\
+		T & F & T &	 T & T & T \\
+		T & F & F &	 T & T & T \\
+		F & T & T &	 T & T & T \\
+		F & T & F &	 F & F & F \\
+		F & F & T &	 T & T & T \\
+		F & F & F &	 T & T & T \\
+	\end{tabular}\\\\
+CNF:\\
+$\neg(\neg p \land q \land \neg r)$
+$\Leftrightarrow$\\
+$p \lor \neg q \lor r$\\\\
+
+%**********OK***************Q2
+\textbf{Problem 2}\\\\
+%*************************
+$\neg((p\land q \land r) \lor (p \land \neg q \land \neg r) \lor (\neg p \land q \land r) \lor (\neg p \land \neg q \land r) \lor (\neg p \land \neg q \land \neg r))$
+$\Leftrightarrow$\\
+$\neg(p\land q \land r) \land \neg(p \land \neg q \land \neg r) \land \neg(\neg p \land q \land r) \land \neg(\neg p \land \neg q \land r) \land \neg(\neg p \land \neg q \land \neg r)$
+$\Leftrightarrow$\\
+$(\neg p \lor \neg q \lor \neg r) \land (\neg p \lor q \lor r) \land (p \lor \neg q \lor \neg r) \land (p \lor q \lor \neg r) \land (p \lor q \lor r)$\\\\
+
+%***********OK?**************Q3
+\textbf{Problem 3}\\\\
+%*************************
+We can show this by prove the invalidity in a truth table. If the most right column contains one or more $F$, the statement is invalid.\\
+
+\textbf{a)}\\
+	\begin{tabular}{ cc|c|c|c }
+		p & q & $p \ra q$ & $p \lor q$ & $p \ra q \vdash p \lor q$ \\ \hline
+		T & T & 	T & T & T \\
+		T & F & 	F & T & \textbf{F} \\
+		F & T & 	T & T & T \\
+		F & F & 	T & F & \textbf{F} \\
+	\end{tabular}\\\\
+	Shown invalid through truth table above.\\\\
+
+\textbf{b)}\\
+	\begin{tabular}{ ccc|c|c|c|c|c }
+		p & q & r & $p \ra q \lor r$ & $p \ra q$ & $p \ra r$ & $(p \ra q) \land (p \ra r)$ & $p \ra q \lor r \vdash (p \ra q) \land (p \ra r)$  \\ \hline
+		T & T & T &	 T & T & T & T & T \\
+		T & T & F &	 T & T & F & F & \textbf{F} \\
+		T & F & T &	 T & F & T & F & \textbf{F} \\
+		T & F & F &	 F & F & F & F & T \\
+		F & T & T &	 T & T & T & T & T \\
+		F & T & F &	 T & T & T & T & T \\
+		F & F & T &	 T & T & T & T & T \\
+		F & F & F &	 T & T & T & T & T \\
+	\end{tabular}\\\\
+	Shown invalid through truth table above.\\\\
+
+\textbf{c)}\\
+	\begin{tabular}{ cc|c|c|c }
+		p & q & $p \land q$ & $p \ra q$ & $\vdash (p \land q) \lor (p \ra q)$ \\ \hline
+		T & T & 	T & T & T \\
+		T & F & 	F & F & \textbf{F} \\
+		F & T & 	F & T & T \\
+		F & F & 	F & T & T \\
+	\end{tabular}\\\\
+	Shown invalid through truth table above.\\\\
+
+%*************************Q4
+\textbf{Problem 4}\\\\
+%*************************
+\textbf{a)}\\
+	\begin{tabular}{ cc|c|c|c }
+		$\varphi$ & $\psi$ & $\varphi \odot \psi$ & $\neg \varphi \lor \neg \psi$ & $\neg \varphi \lor \neg \psi \vdash \varphi \odot \psi$ \\ \hline
+		T & T & 	F & F & T \\
+		T & F & 	T & T & T \\
+		F & T & 	T & T & T \\
+		F & F & 	T & T & T \\
+	\end{tabular}\\\\
+$\varphi$ and $\psi$ have the same truth value under each valuation.\\\\
+
+\textbf{b)}\\
+
+\end{document}
