@@ -14,7 +14,7 @@
 \raggedbottom
 
 \title{Josefin Ondrus\\ondrus@student.chalmers.se}
-\author{DAT060 Exercise week 1}
+\author{DAT060 Exercise week 2}
 \date{\today}
 \maketitle
 
@@ -77,7 +77,7 @@ We can show this by prove the invalidity in a truth table. If the most right col
 		T & T & 	T & T & T \\
 		T & F & 	F & T & \textbf{F} \\
 		F & T & 	T & T & T \\
-		F & F & 	T & F & \textbf{F} \\
+		F & F & 	T & F & T \\
 	\end{tabular}\\\\
 	Shown invalid through truth table above.\\\\
 
@@ -104,58 +104,63 @@ We can show this by prove the invalidity in a truth table. If the most right col
 		F & F & 	F & T & T \\
 	\end{tabular}\\\\
 	Shown invalid through truth table above.\\\\
-
+\newpage
 %*************************Q4
 \textbf{Problem 4}\\\\
 %*************************
 \textbf{a)}\\
+	\begin{tabular}{ cc|c|c }
+		$\varphi$ & $\psi$ & $\varphi \odot \psi$ & $\neg \varphi \lor \neg \psi$ \\ \hline
+		T & T & 	F & F \\
+		T & F & 	T & T \\
+		F & T & 	T & T \\
+		F & F & 	T & T \\
+	\end{tabular}\\\\
+As we can see from the truth table, $\varphi \odot \psi$ has the same value as $\neg \varphi \lor \neg \psi$ for every state on the atoms. Hence we can write $\varphi \odot \psi \equiv \neg \varphi \lor \neg \psi$, and we've expressed $\odot$ using connectives of propositional logic.\\\\
+
+\textbf{b)}\\
+Lets make truth tables for every operator and show that there exist at least one combination of $\odot$ and atoms that have the same truth value as each operator on every atom state.\\\\
+
+For $\varphi = \neg p$, assume that $\varphi' = p \odot p$\\\\
+	\begin{tabular}{ c|c|c }
+		$p$ & $\neg p$ & $p \odot p$ \\ \hline
+		T & 	F & F \\
+		T & 	F & F \\
+		F & 	T & T \\
+		F &		T & T \\
+	\end{tabular}\\\\
+Since $\varphi$ and $\varphi'$ have the same truth value under each valuation we've shown that $\varphi \equiv \varphi'$.\\\\
+
+For $\varphi = p \land q$, assume that $\varphi' = (p \odot q) \odot (p \odot q)$\\\\
 	\begin{tabular}{ cc|c|c|c }
-		$\varphi$ & $\psi$ & $\varphi \odot \psi$ & $\neg \varphi \lor \neg \psi$ & $\neg \varphi \lor \neg \psi \vdash \varphi \odot \psi$ \\ \hline
-		T & T & 	F & F & T \\
-		T & F & 	T & T & T \\
+		$p$ & $q$ & $p \land q$ & $ p \odot q$ & $(p \odot q) \odot (p \odot q)$ \\ \hline
+		T & T & 	T & F & T \\
+		T & F & 	F & T & F \\
+		F & T & 	F & T & F \\
+		F & F & 	F & T & F \\
+	\end{tabular}\\\\
+Since $\varphi$ and $\varphi'$ have the same truth value under each valuation we've shown that $\varphi \equiv \varphi'$.\\\\
+\newpage
+For $\varphi = p \lor q$, assume that $\varphi' = (p \odot p) \odot (q \odot q)$.\\\\
+	\begin{tabular}{ cc|c|c|c|c }
+		$p$ & $q$ & $p \lor q$ & $p \odot p$ & $q \odot q$ & $(p \odot p) \odot (q \odot q)$\\ \hline
+		T & T & 	T & F & F & T \\
+		T & F & 	T & F & T & T \\
+		F & T & 	T & T & F & T \\
+		F & F & 	F & T & T & F \\
+	\end{tabular}\\\\
+Since $\varphi$ and $\varphi'$ have the same truth value under each valuation we've shown that $\varphi \equiv \varphi'$.\\\\
+
+For $\varphi = p \ra q$, assume that $\varphi' = p \odot (p \odot q)$.\\\\
+	\begin{tabular}{ cc|c|c|c }
+		$p$ & $q$ & $p \ra q$ & $ p \odot q$ & $p \odot (p \odot q)$ \\ \hline
+		T & T & 	T & F & T \\
+		T & F & 	F & T & F \\
 		F & T & 	T & T & T \\
 		F & F & 	T & T & T \\
 	\end{tabular}\\\\
-$\varphi$ and $\psi$ have the same truth value under each valuation.\\\\
+Since $\varphi$ and $\varphi'$ have the same truth value under each valuation we've shown that $\varphi \equiv \varphi'$.\\\\
 
-\textbf{b)}\\
-%To show $\varphi \equiv \varphi'$, we need to show that
-Lets make truth tables for every operator and prove that a combination of $\odot$ derives to each operator with the same atoms.\\\\
-
-NOT:\\
-	\begin{tabular}{ c|c|c|c }
-		$p$ & $\neg p$ & $p \odot p$ & $p\odot p \vdash \neg p$ \\ \hline
-		T & 	F & F & T \\
-		T & 	F & F & T \\
-		F & 	T & T & T \\
-		F &		T & T & T \\
-	\end{tabular}\\\\
-
-AND:\\
-	\begin{tabular}{ cc|c|c|c|c }
-		$p$ & $q$ & $p \land q$ & $ p \odot q$ & $(p \odot q) \odot (p \odot q)$ & $(p \odot q) \odot (p \odot q) \vdash p\land q$ \\ \hline
-		T & T & 	T & F & T & T \\
-		T & F & 	F & T & F & T \\
-		F & T & 	F & T & F & T \\
-		F & F & 	F & T & F & T \\
-	\end{tabular}\\\\
-	
-OR:\\
-	\begin{tabular}{ cc|c|c|c|c|c }
-		$p$ & $q$ & $p \lor q$ & $p \odot p$ & $q \odot q$ & $(p \odot p) \odot (q \odot q)$ & $(p \odot p) \odot (q \odot q) \vdash p\lor q$ \\ \hline
-		T & T & 	T & F & F & T & T \\
-		T & F & 	T & F & T & T & T \\
-		F & T & 	T & T & F & T & T \\
-		F & F & 	F & T & T & F & T \\
-	\end{tabular}\\\\
-
-IMPL:\\
-	\begin{tabular}{ cc|c|c|c|c }
-		$p$ & $q$ & $p \ra q$ & $ p \odot q$ & $p \odot (p \odot q)$ & $p \odot (p \odot q) \vdash p \ra q$ \\ \hline
-		T & T & 	T & F & T & T \\
-		T & F & 	F & T & F & T \\
-		F & T & 	T & T & T & T \\
-		F & F & 	T & T & T & T \\
-	\end{tabular}\\\\
+As we can build any formula of propositional logic with these operands, and we have found at least one formula built up from propositional atoms and $\odot$, I've shown that there is a formula $\varphi'$ fulfilling the wanted criteria.
 
 \end{document}
