@@ -1,0 +1,51 @@
+\documentclass[12pt,oneside,reqno]{amsart}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=2cm]{geometry} % page settings
+\usepackage{amsmath} % provides many mathematical environments & tools
+\usepackage{amssymb}
+\usepackage{natded}
+\usepackage{booktabs}
+
+\begin{document}
+\setlength{\parindent}{6pt}
+\def\code#1{\texttt{#1}} %Code looking
+\def\ra{\rightarrow{}} %Short for right arrow
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\raggedbottom
+
+\title{Josefin Ondrus\\ondrus@student.chalmers.se}
+\author{DAT060 Exercise week 2}
+\date{\today}
+\maketitle
+
+%***********DOUBLE CHECK!**************Q1
+\textbf{Problem 1}\\
+%*************************
+$S(x) : x $ is student,\\
+$P(x) : x $ is a problem,\\
+$R(x, y) : x $ solves $y$\\\\
+
+\textbf{a) There is a student who solves all problems.}\\
+$\exists x (S(x) \ra( \forall y (P(y) \land R(x,y))))$\\\\
+
+\textbf{b) Each problem is solved by some student.}\\
+$\forall x (P(x) \ra (\exists y (S(y) \land R(x,y))))$\\\\
+
+%*************************Q2
+\textbf{Problem 2}\\
+
+\textbf{a) $\forall x\forall y R(x,y) \vdash \forall x R(x,x)$}\\
+
+\textbf{b) $\forall x (P(x) \ra S) \vdash (\exists x P(x)) \ra S$}\\
+
+\textbf{c) $\exists x \forall y R(x,y) \vdash \forall y \exists x R(x,y)$}\\
+
+\textbf{a) $\exists x (P(x) \lor Q(x)), \forall x(Q(x) \ra F(x)) \vdash \exists x (P(x) \lor F(x))$}\\
+
+%*************************Q3
+\textbf{Problem 3}\\
+%*************************
+
+$\exists x(P(x) \ra \forall y P(y))$
+
+\end{document}
