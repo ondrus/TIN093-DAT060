@@ -1,0 +1,60 @@
+\documentclass[12pt,oneside,reqno]{amsart}
+\usepackage[left=3cm,right=3cm,top=5cm,bottom=2cm]{geometry} % page settings
+\usepackage{amsmath} % provides many mathematical environments & tools
+\usepackage{amssymb}
+
+\begin{document}
+\setlength{\parindent}{6pt}
+\def\code#1{\texttt{#1}} %Code looking
+
+\title{TIN093 Exercise week 3}
+\author{Josefin Ondrus}
+\date{\today}
+\maketitle
+
+%*************************Q1
+\textbf{A. Explain in your words why the dynamic programming algorithm...}\\\\
+%*************************
+The dynamic programming programming algorithm for Knapsack is nor a polynomal-time algorithm since 
+
+%*************************Q2
+\textbf{B. Explain the proposed dynamic programming formula...}\\\\
+%*************************
+The proposed dynamic programming formula is
+
+We get this formula through
+
+It is correct since
+
+We can compute the OPT values in the following order
+
+%************************Q3
+\textbf{C. Now something more ambitious and tricky:...}\\\\
+Given:
+
+Goal:
+
+The naive algorithm is $O(n^6)$ since
+
+We can reduce the exponent by using dynamic programming. HOW? -you ask..
+
+Compute
+%*************************
+
+%*************************Q4
+\textbf{Can be exam-related. We modify the Weighted Interval Scheduling...}\\\\
+%*************************
+Given:
+
+Goal:
+
+Compute 
+
+If we analyze the time complexity of the computation above
+
+\textbf{Can be exam-related. Extra question: Is Fixed Cardinality Weighted..}\\\\
+%*************************PROGRAMMING
+\textbf{Recommended Programming. You may find it easier to get...}\\\\
+%********************
+
+\end{document}
