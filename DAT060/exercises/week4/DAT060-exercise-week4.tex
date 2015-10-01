@@ -1,0 +1,108 @@
+\documentclass[12pt,oneside,reqno]{amsart}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=2cm]{geometry} % page settings
+\usepackage{amsmath} % provides many mathematical environments & tools
+\usepackage{amssymb}
+\usepackage{natded}
+\usepackage{booktabs}
+
+\begin{document}
+\setlength{\parindent}{6pt}
+\def\code#1{\texttt{#1}} %Code looking
+\def\ra{\rightarrow{}} %Short for right arrow
+%\def\proof{\proofline{\amsmath}{}} %Short for right arrow
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\raggedbottom
+
+\title{Josefin Ondrus\\ondrus@student.chalmers.se}
+\author{DAT060 Exercise week 4}
+\date{\today}
+\maketitle
+
+%************************Q1
+\textbf{Problem 1}\\
+%*************************
+\textbf{a)}$\forall x f(f(x))=f(x), f(b)=c \vdash c=f(c)$
+	\[
+	\Jproof{
+		\proofline{\forall x f(f(x))=f(x)}{prem}
+		\proofline{f(b)=c}{prem}
+		\proofline{f(f(b))=f(b)}{$\forall x e\ 1$}
+		\proofline{f(c)=c}{$=e\ 2,3$}
+		\proofline{c=c}{$=i$}
+		\proofline{c=f(c)}{$=e\ 4,5$}\\\\
+	}
+	\]
+
+\textbf{b)}$\forall x \forall y (x=g(y) \ra f(x)=y) \vdash \forall x f(g(x))=x$
+	\[
+	\Jproof{
+		\proofline{\forall x \forall y (x=g(y) \ra f(x)=y)}{prem}
+		\cablk{
+			\proofline{x_0}{}
+			\proofline{x_0=g(x_0)}{ass}
+			\proofline{\forall y(x_0=g(y) \ra f(x_0)=y)}{$\forall xe\ 1$}
+			\proofline{x_0=g(x_0) \ra f(x_0)=x_0}{$\forall ye\ 4$}
+			\proofline{f(x_0)=x_0}{$\ra e\ 3,5$}
+			\proofline{f(g(x_0))=x_0}{$=e\ 3,6$}
+		}
+		\proofline{\forall x f(g(x))=x}{$\forall x i\ 2-7$}
+	}
+	\]
+
+%************************Q2
+\textbf{Problem 2}\\
+%*************************
+$\varphi := \forall x \exists y \exists z (P(x,y) \land P(y,z) \land \forall w (P(w,x) \ra P(w,z)))$\\\\
+\textbf{a)} $P^{M_0} := \{(m,n) | m<n $ and $m,n \in \mathbb{N}\}$\\\\
+$(1)$ If $x<y$ and  $y<z$ we know that $x<z$ since $"<"$ is a transitive operator.\\
+$(2)$ If $w<x$ and we know that $x<z$ from $(1)$, we know that $w<z$ for all $w$.\\
+And we get that $P^{M_0}$ satisfies $\varphi$ from $(1)$ and $(2)$.\\\\
+
+\textbf{b)} $P^{M_1} := \{(m,2*m) | m \in \mathbb{N}\}$\\\\
+Lets define $m$ as $m_1=x$, $m_2=y$, $m_3=z$ and $m_4=w$.\\ 
+From $P^{M_1} := \{(m,2*m)$ we then get:\\
+$(1)\ 2m_1=m_2$\\
+$(2)\ 4m_1=2m_2=m_3$\\
+and for all $m_4$: if $m_4=2m_1$ holds, $m_4=2m_3$ should hold ($\forall w (P(w,x) \ra P(w,z))$) but since $2m_3=8m_1$ (from $(2)$) and we know that $2m_1 \not= 8m_1$ for all $m_1 \in \mathbb{N}$ we also know that $P^{M_1}$ does not satisfy $\varphi$.\\\\
+
+%************************Q2
+\textbf{Problem 3}\\
+%*************************
+\textbf{a) $\forall x \exists y R(x,y) \vdash \exists y \forall x R(x,y)$}\\\\
+Assume the model from problem $2\ b)$ where $P^{M_1} := \{(m,2*m) | m \in \mathbb{N}\}$\\\\The premise states that for all $m$ there exists a $n$ such that $n = 2*m$. i.e if we take an arbitrary $m \in \mathbb{N}$, we can always find a $n$ twice as big.\\\\
+The conclusion states that there exists a $n$ such that $n = 2*m$ for all m. i.e there exists a $n$ that for any $m \in \mathbb{N}$ is twice as big. \\Thus, the conclusion is not valid since there exists no such $n\in \mathbb{N}$\\\\
+
+\textbf{b) $\forall x(P(x)\lor Q(x)) \vdash \forall x P(x) \lor \forall x Q(x)$}\\\\
+Given a model M where:\\
+$P^M := \{(m)|m<0$ and $m\in\{-1,1\}\}$\\
+$Q^M := \{(m)|m>0$ and $m\in\{-1,1\}\}$\\\\
+We know that the premise is always valid for $M$ but never valid for the conclusion since not P nor Q is valid for all $x$, ever.
+
+\textbf{c) $\forall x \exists y (P(x) \ra Q(y)) \vdash \forall x (P(x) \ra \exists y Q(y))$}\\
+	\[
+	\Jproof{
+		\proofline{\forall x \exists y (P(x) \ra Q(y))}{prem}
+		\proofline{\exists y (P(x_0) \ra Q(y))}{$\forall xe\ 1$}
+		\cablk{
+			\proofline{x_0}{\ }
+			\cablk{
+				\proofline{y_0\ P(x_0)\ra Q(y_0)}{ass}
+				\cablk{
+					\proofline{P(x_0)}{ass}
+					\proofline{Q(y_0)}{$\ra e\ 4,5$}
+					\proofline{\exists yQ(y)}{$\exists yi\ 6$}
+				}
+				\proofline{P(x_0)\ra \exists yQ(y)}{$\ra i\ 5-7$}
+			}
+			\proofline{P(x_0) \ra \exists y Q(y)}{$\exists ye\ 2, 4-8$}
+		}
+		\proofline{\forall x (P(x) \ra \exists y Q(y))}{$\forall i\ 3-9$}\\\\
+	}
+	\]
+
+\textbf{d) $\forall x R(x,x), \forall x \forall y(R(x,y) \ra R(y,x)) \vdash \forall x \forall y \forall z(R(x,y) \land R(y,z) \ra R(x,z)) $}\\\\
+For the model where $R^M := \{(a,a), (b,b), (c,c), (a,b), (b,a), (a,c), (c,a)\}$ The conclusion does not hold for there exists no $(b,c)$ and therefor the sequent is not valid.
+
+
+\end{document}
