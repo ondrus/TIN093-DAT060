@@ -12,20 +12,35 @@
 \date{\today}
 \maketitle
 
+%*************************A
+\textbf{A. An (idealized, fictive) country is divided into...}\\\\
+%*************************
+Given: $r$ - the number of regions the country and the regions are divided in.\\
+$d$ - the level of regions.\\
+$c(i)$ the cost of every region on level $i$.\\
+Goal: Calculate total cost.\\\\
+What we want is the total sum $S$ of the country. If we visualize the structure as a symmetric tree with $d$ levels. Then we know that the number of regions in every level $i$ is $r^{i-1}$, which gives us the cost of every level to $c(i)*r^{i-1}$. If we now calculate the total sum of all the levels, we get $\sum_{i=1}^{d}c(i)*r^{i-1}$, which should give us the total cost of running the country. Tada!\\\\
 
-
-%*************************Q4
+%***********OK**************C
+\textbf{C. How much time is needed to decide whether...}\\\\
+%*************************
+Assuming the sets are in two different arrays $A_1$ and $A_2$:\\\\
+If we don't sort the arrays, in worst case, we need to check the first number in $A_1$ to all numbers in $A_2$, the second number in $A_1$ to $n-1$ numbers in $A_2$ giving us a calculation time of $O(n^2-\frac{n(n+1)}{2})$ i.e. time complexity of $O(n^2)$.\\\\
+However, if we sort both arrays (in $2*nlog(n)$ time) and then compare every number in $A_{1i}$ to the corresponding number $A_{2i}$ worst case scenario is if only two numbers are different or if the arrays are equal. We then get a calculation time of $O(n)$. There for, in total $O(2*nlog(n)) + O(n)$ giving us a time complexity of $O(nlog(n))$. WOHO! Better than $O(n^2)!$\\\\
+\newpage
+%************OK*************EXAM
 \textbf{Can be exam-related. A certain industrial product will be broken...}\\\\
 %*************************
-Given: \\
-$P$ the set of $n$ intervals $p$ such that $P={p_1, p_2,...p_n}$.\\
-Every interval $p_i, i=1,...,n$ has a corresponding value $v_i$ and a start and finish $[s_i,f_i]$ and $f_i < s_j$.\\
-$k \in \mathbb{N}$ the number of intervals we want to have in our set.\\
+Given: $n$ different values of $f$.\\
+Goal: Find the discrete value $f$ for which if the force is $>f$, the product breaks.\\\\
+Prove that $O(n)$ tests are needed in the worst case if we can only allow 1 bad test:\\
+Assuming the values are sorted in a way that $f_1 < f_2 < ... < f_n$, we encounter worst case scenario when $f=f_n$. This is because we need to go through every single value in increasing order to ensure us that we do not miss the correct $f$. (i.e. starting at $f_1, f_2, ..., f_n$). If we try to reduce the number of tests we would obviously have to skip some tests. This could reduce the number of possible values of $f$ but we would never know for sure the exact value of $f$ since we've used our only bad case and more possible values are still to be tested.\\\\
+Example: Lets say that we'd skip every other value of $f$. This would reduce the number of tests needed by half (i.e. $O(\frac{n}{2})$), but we wouldn't know if $f=f_i$ of if $f=f_{i-1}$ (and $f=f_n$ or $f=f_{n-1}$ in worst case).\\\\
+Furthermore: Can you save tests if some more bad tests are permitted?\\
+Yes! If we were give just two bad tests in total, we could reduce the number of tests. For example by half, using the strategy mentioned above.\\
 
-Goal: To select a subset of $P$ of pairwise disjoint intervals such that $f_i < s_j$. The number of selected intervals needs to be equal to $k$, ($\sum\limits_{i\in P}p_i=k$) in such a way that we maximize the sum of the value $v = \sum\limits_{i\in P}v_i$.
+Assuming the values are sorted increasing in an array, we could also reduce the number of tests by calculating min($\frac{n}{i}+i-1$), where $n$ still is the number of values and $i$ is a variable representing the $f_i$ we start our search on. If we get a fail on $f_i$, we start from $f_1$ and test out self up to at most $f_i-1$. If the we don't get a fail on $f_i$, we test $f_2*i$. If the product doesn't break at $f_2*i$, we try $f_3*i$, and so on. We get worst case if we don't get a bad until we try $f_n$, forcing us to test $i$ times and then another $\frac{n}{i}-1$ times to find the correct $f$.\\\\
+If we are allowed to have log(n) bad test, we could determine $f$ in $O(log(n))$ tests by binary search.
 
-Dynamic programming: This problem clearly have some equalities with the Knapsack problem. We could see it as we want to pack exactly $k$ pairwise disjoint items $p$ at the same time as we maximize the value $v$.
-
-Did not have time to write down more than this but would like some comments on the formulation. :)
 
 \end{document}
