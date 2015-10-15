@@ -23,25 +23,25 @@
 %************DOUBLE CHECK************Q1
 \textbf{Problem 1}\\
 %*************************
-\textbf{Input: A formula $\varphi$ of predicate logic.}\\
-\textbf{Question: Is $\varphi$ satisfiable?}\\\\
-We can only prove that $\varphi$ is satisfiable by proving $M \models_l \varphi$.
-This is however undecidable since no program exists which, given any $\varphi$, decides whether $\models \varphi$.\\\\
-
+\textbf{Input:} A formula $\varphi$ of predicate logic.\\
+\textbf{Question:} Is $\varphi$ satisfiable?\\\\
+According to Theorem 2.22 "The decision problem of validity in predicate logic is undecidable:
+no program exists which, given any $\varphi$, decides whether $\models \varphi$."\\\\
+To prove satisfiability, we need to prove that there exists a model $M$  and a look-up table
+$l$ with $M\models_l \varphi$. It is possible for us to find such a model for some $\varphi$s, but not all due to the possibility of very large formulas. If however $\varphi$ isn't satisfiable (unsatisfiable), we need to show this as well (since our program should be able to return ether "yes" or "no"). To show that $\varphi$ is unsatisfiable, we need to show the validity of $\models \neg\varphi$  which is undecidable according to theorem 2.22.\\\\
 %***********OK*************Q2
 \textbf{Problem 2}\\
 %*************************
-\textbf{$\varphi := \forall xP(x,f(x)) \land \forall x\exists y \neg P(x,y)$}\\
-
+\textbf{$\varphi := \forall xP(x,f(x)) \land \forall x\exists y \neg P(x,y)$}\\\\
 \textbf{$M \models \varphi$}\\
-$A^M \deff \{m,n \in \mathbb{N}\}$\\
-$f(m) \deff m$\\
-$P(m,n) \deff m=n$\\\\
+$M$ consists of the set of natural numbers $\mathbb{N}$ with\\
+$f(m) := m$ and\\$P^{M_2}\{(m)|m \text{ is a dog and } m \in \text{ all animals}\}$
+$P^{M} := \{(m,n) | m=n \text{ and } m,n \in \mathbb{N}\}$\\\\
 \textbf{$M' \not\models \varphi$}\\
-$A^M \deff \{m,n \in \mathbb{Z}\}$\\
-$f(m) \deff -m$\\
-$P(m,n) \deff n=-m$\\\\
-
+$M'$ consists of the set of natural numbers $\mathbb{N}$ with\\
+$f(m) := -m$ and\\
+$P^{M'}\{(m,n) | n=-m \text{ and } m,n \in \mathbb{N}\}$\\\\
+\newpage
 %**********OK**************Q2
 \textbf{Problem 3}\\
 %*************************
@@ -88,24 +88,26 @@ $P(m,n) \deff n=-m$\\\\
 			\proofline{S}{$\lor e\ 4,6-9,10$}	
 			}
 		\proofline{P(x_0)\ra S}{$\ra i\ 5-11$}
+		\proofline{\exists z (P(z) \ra S)}{$\exists zi\ 12$}
 		}
-	\proofline{P(z) \ra S}{$\exists ye\ 2,3-12$}\\
+	\proofline{\exists z (P(z) \ra S)}{$\exists ye\ 2,3-13$}\\
 	}
 	\]
+\newpage
 %************************Q4
 \textbf{Problem 4}\\
 %*************************
 
 \textbf{a) }$\neg \forall x P(x) \vdash \forall x \neg P(x)$\\\\
-Given the counter model:\\
-$P^M \deff \mathbb{N}$\\
-$P(m) \deff m=3$\\
+Given the counter model $M_1$:\\
+Where $M_1$ consists of the set of natural numbers $\mathbb{N}$ with\\
+$P^{M_1} := \{(m) | m=3 \text{ and } n \in \mathbb{N}\}$\\
 In text: Not all natural numbers are equal to three, but all natural numbers is not separated from three.\\\\
-\textbf{b) }$\exists x P(x), \exists y Q(y) \vdash \exists z(P(x) \land Q(z))$
-Given the counter model:\\
-$P^M \deff$ all animals\\
-$P(m) \deff m$ is a dog\\
-$Q(m) \deff m$ is a cat\\
+\textbf{b) }$\exists x P(x), \exists y Q(y) \vdash \exists z(P(x) \land Q(z))$\\\\
+Given the counter model $M_2$:\\
+Where $M_2$ consists of the set of all animals with\\
+$P^{M_2}\{(m)|m \text{ is a dog and } m \in \text{ all animals}\}$\\
+$Q^{M_2}\{(m)|m \text{ is a cat and } m \in \text{ all animals}\}$\\
 In text: There exist animals that are dogs, and there exist animals that are cats, but there is no animal that is both cat and dog at the same time.\\\\
 %************************Q2
 \textbf{Problem 5}\\

@@ -1,0 +1,56 @@
+\documentclass[12pt,oneside,reqno]{amsart}
+\usepackage[left=3cm,right=3cm,top=5cm,bottom=2cm]{geometry} % page settings
+\usepackage{amsmath} % provides many mathematical environments & tools
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+\setlength{\parindent}{6pt}
+\def\code#1{\texttt{#1}} %Code looking
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\title{TIN093 Exercise week 6}
+\author{Josefin Ondrus}
+\date{\today}
+\maketitle
+
+%*************************A
+\textbf{A. When we reduce a problem X to a problem Y...}\\\\
+%************************* 
+When reducing x to y, we know that y is at least as hard to solve as solving x, and the time it takes to solve x is then greater than or equal to the time it takes to solve y. Therefor the only thing that matters is the time it takes to solve x. And also, since the question only concern the reduction "When we reduce a problem X to a problem Y , why..." the actual solving time is not a part of the reduction.\\\\
+
+%*************************B
+\textbf{B. Explain the following statement in detail: ...}\\\\
+%*************************
+If an optimization problem is solvable in polynomial time, we know we can solve a reformulation of the optimization problem in polynomial time as well.\\\\
+Since we can rewrite the optimization problem to a decision problem we only need to solve the optimization (in polynomial time) and then compare our question "is this the solution to the problem?" with the answer we got when we solved it.\\\\
+The other way around we can test the possible solutions one by one and do this until we get our wished result. Since this is a linear process (the testing of solutions) our upper bound is still polynomial an hence the complexity for solving the optimization problem is polynomial.\\\\
+
+%************************C
+\textbf{C. “NP problems (that is, problems in NP)...}\\\\
+%*************************
+No, since P problems are a subset of NP problems, and P problems are not computational hard, not all NP problems are computationally hard.\\\\
+\newpage
+%*************************D
+\textbf{D. “If a problem is NP-complete, then we know...}\\\\
+%*************************
+No, since we only know that for a problem to be NPC it need to be NP as well as NP-hard, but there is no proof that NPC is only solvable in exponential time, only that problems in NP-hard is the problems hardest to solve in NP.\\\\
+
+%*************************E
+\textbf{E. “The Independent Set problem is NP-complete...}\\\\
+%*************************
+Yes, this is true. Since interval graphs are a subset of all graphs (arbitrary graphs) and there is nothing in interval graphs that separate them from other graphs, I believe that Independent Set is NPC for interval graphs.\\\\
+
+%*************************F
+\textbf{F. A Boolean term consists of literals connected by...}\\\\
+%*************************
+The flaw in the reasoning regarding CNF easy to solve by SAT is that the argument only consists of how "easy" it is to convert from one problem to another. We can apprehend the conversion from CNF to DNF as easy since there is not necessarily any "hard thinking" required and it is fairly straight forward but the actual transformation would be in NPC since the number of conjunctions joined by disjunctions could be exponentially larger than the number of disjunctions joined by conjunctions in the original CNF we transformed.\\\\
+
+%*************************EXAM
+\textbf{Can be exam-related. Assume that, for some reason, we need...}\\\\
+%*************************
+If we use one of the algorithms that is usually used to calculate minimum spanning tree (for example Prim's Algorithm or Kruskal's Algorithm) we could retrieve a maximum spanning tree by negating the edge costs (by multiplying all costs with -1) and run Kruskal's Algorithm, we will get the spanning tree with maximum capacity since the edges with the highest costs will be the edges with the lowest cost when negating. 
+
+\end{document}
