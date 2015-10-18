@@ -34,8 +34,8 @@
 %*************************
 Drawing the graph we get: 
 	\begin{figure}[h]
-      	\includegraphics[scale=0.5]{prob2}
-	\end{figure}
+      	\includegraphics[scale=0.7]{prob2}
+	\end{figure}\\
 \textbf{a} is satisfied on all paths in M\\
 This because no matter what state we start from ether $\neg p$ or $\neg q$ will hold. There is only one path where we do not pass $\emptyset$ and that is $s_1 ->s_1->s_1 ->...$ where $\neg q$ hold, making the LTL-formula satisfied (assuming $\neg p, \neg q \text{ holds in } \emptyset$).\\\\
 \textbf{b} is satisfied on all paths in M\\
@@ -62,7 +62,9 @@ We know $\neg AG(p \land q) = EF\neg(p \land q)$.\\
 Through De Morgan's we can rewrite the formula as $\neg AG(p\land q) = EF(\neg p \lor \neg q)$\\
 and by the equivalence $EF(\varphi_1 \lor \varphi_2)=EF\varphi_1 \lor EF\varphi_2$\\ we can state that $\neg AG(p\land q) = EF\neg p\lor EF\neg q$\\
 Which is the equivalence that should be proven.\\\\
-
-\textbf{d}\\
-
+\textbf{d} These CTL-formula are not equivalent\\
+Since $\varphi_1 U \varphi_2$ demands that $\varphi_2$ does hold in some future state; the right formula demands that both $q$ and $r$ holds in some future state in all paths. However, the left formula demands that $A[q U r]$ and $r$ holds in some future state for all paths. And since $A[q U r]$ is fulfilled if $r$ holds where we start the path (since the present is included in the future). We can prove that the formulas are not equivalent with the transition system below where the left formula holds but not the right (since $q$ never holds in some future). 
+	\begin{figure}[h]
+      	\includegraphics[scale=0.7]{prob3d}
+	\end{figure}\\\\
 \end{document}
